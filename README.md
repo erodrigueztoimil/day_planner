@@ -1,3 +1,13 @@
+save to localStorage each hour with the user input
+
+if already saved render user interface with saved information
+
+else show blank input
+
+
+
+
+
 # Unit 05 Third-Party APIs Homework: Day Planner
 ​
 Create a simple calendar application that allows the user to save events for each hour of the day. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.

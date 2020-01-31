@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+}
+body h1 {
+  font-size: 30px;
+}
+body p {
+  font-size: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 10% 0;
+  font-size: 20px;
+}
+
+.title {
+  text-align: center;
+  width: 80%;
+  max-width: 500px;
+  margin: 150px auto;
+}
+
+.day-view ul {
+  list-style-type: none;
+  margin-bottom: 70px;
+}
+.day-view ul li {
+  display: flex;
+  align-items: center;
+  margin: 10px auto;
+  width: 80%;
+  max-width: 700px;
+  justify-content: center;
+}
+.day-view ul li .hour {
+  font-size: 18px;
+  width: 10%;
+  text-align: center;
+}
+.day-view ul li .task-input {
+  width: 100%;
+  font-size: 20px;
+  padding: 5px 10px;
+  margin: 0 10px;
+}
+.day-view ul li .save-button {
+  font-size: 20px;
+  padding: 5px 10px;
+}
+
+/*# sourceMappingURL=style.css.map */
