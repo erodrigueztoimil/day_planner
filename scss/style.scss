@@ -36,6 +36,7 @@ header {
       width: 80%;
       max-width: 700px;
       justify-content: center;
+      background-color: lightblue;
 
       .hour {
         font-size: 18px;
@@ -56,4 +57,8 @@ header {
       }
     }
   }
+}
+
+.done {
+  background-color: red;
 }

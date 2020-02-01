@@ -33,6 +33,7 @@ header {
   width: 80%;
   max-width: 700px;
   justify-content: center;
+  background-color: lightblue;
 }
 .day-view ul li .hour {
   font-size: 18px;
@@ -48,6 +49,10 @@ header {
 .day-view ul li .save-button {
   font-size: 20px;
   padding: 5px 10px;
+}
+
+.done {
+  background-color: red;
 }
 
 /*# sourceMappingURL=style.css.map */
