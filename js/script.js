@@ -1,4 +1,15 @@
 $(document).ready(function() {
+
+  // handle scroll animation
+
+  $(window).scroll(function() {
+    var pos = $(this).scrollTop();
+
+    $(".hero").css({
+    transform: 'translate3d(0, +'+(pos/50)+'%, 0) scale('+(100 - pos/50)/100+')'
+  });
+  })
+
   var currentTime;
 
   handleCurrentTime(); // display static clock
@@ -7,21 +18,27 @@ $(document).ready(function() {
 
   function handleCurrentTime() {
     currentTime = moment().format("H"); // current time in military format
-    $('.time').text(moment().format("h:mm:ss a"));
+    $('.time').text(moment().format("H:mm:ss"));
   } // display current time
 
   setInterval(function() {
     handleCurrentTime() // render time every second to make clock live
-    renderDoneTask() // handle if the time of the task passed
+    // renderDoneTask() // handle if the time of the task passed
   }, 1000)
 
-  $('.date').text(moment().format("dddd, MMMM Do YYYY"));// handle date
+  $('.current-date').text(moment().format("MMMM D, YYYY"));// handle date
+
+  // var currentMonth = moment().format('MMMM').toUpperCase();
+  // $('.current-month').html(currentMonth);
+  //
+  // var currentYear = moment().format('Y');
+  // $('.current-year').html(currentYear);
 
 
   // when executing the function, generate an schedule screen with choosen hours
   // if saved task display value to corresponding time
   function renderTasks() {
-    $('ul').empty(); // delete all previous tasks
+    $('.schedule ul').empty(); // delete all previous tasks
     var hours = ['9AM', '10AM', '11AM', 'Noon', '1PM', '2PM', '3PM', '4PM', '5PM']; // initial schedule
     var savedTask = ''; // default task text
 
@@ -35,7 +52,7 @@ $(document).ready(function() {
       mTime = index+9; // change task time to military hour
 
       // generate an li element for each hour
-      $('ul').append("<li mTime='"+mTime+"'><p class='hour'>"+hour+"</p><input class='task-input' value='"+savedTask+"'></input><button class='save-button'>Save</button></li>")
+      $('.schedule ul').append("<li mTime='"+mTime+"'><p class='hour'>"+hour+"</p><input class='task-input' value='"+savedTask+"'></input><button class='save-button'>Save</button></li>")
     });
   }
 
@@ -62,7 +79,7 @@ $(document).ready(function() {
 
     $('li').each(function() {
       taskTime = $(this).attr('mTime');
-      taskTime = parseInt(taskTime);
+      taskTime = parseInt(taskTime); // convert attribute value to number
 
       if (taskTime < currentTime) {
         $(this).css('background-color', 'red');
